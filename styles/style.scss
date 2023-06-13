@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+body {
+  position: relative;
+}
+.orange {
+  position: absolute;
+  top: -10vh;
+  right: 0;
+  z-index: -1;
+  width: 55vw;
+  height: 150vh;
+}
+header {
+  nav {
+    width: 100%;
+    ul {
+      padding: 2rem;
+      width: 70%;
+      display: flex;
+      list-style-type: none;
+      //justify-content: space-around;
+      justify-content: flex-start;
+      li {
+        font-size: 1.75rem;
+        margin: 0rem 3rem 0rem 0.5rem;
+        a {
+          color: black;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+main {
+  /*使並排*/
+  display: flex;
+  /*在使用flexbox 效果時我們可以發現如果子元素數量較多時，內容常會被壓縮且擠在同一行，這時我們就可以透過 flex-wrap 來換行*/
+  flex-wrap: wrap;
+  section.left {
+    /*倍數放大,縮小,寬度最小值*/
+    padding: 2rem;
+    flex: 3 1 500px;
+    h1 {
+      font-size: 4rem;
+      color: #f9ac53;
+    }
+    p {
+      font-size: 1.5rem;
+      padding: 1rem 0rem;
+    }
+  }
+  section.right {
+    flex: 1 1 600px;
+    position: relative;
+    img {
+      border-radius: 50%;
+      width: 20vw;
+      height: 20vw;
+      position: absolute;
+      top: 55vh;
+      right: 25vw;
+      /*使用 absolute + translate 達到CSS垂直置中的效果*/
+      transform: translateY(-50%);
+    }
+  }
+  section.table {
+    flex: 3 1 400px;
+    padding: 1rem 1rem 1rem 2.5rem;
+
+    table {
+      /*將表格欄位邊框合併，*/
+      border-collapse: collapse;
+      tr {
+        border-bottom: 2px solid gray;
+        /*轉場動畫*/
+        transition: all 0.2s ease;
+        td {
+          padding: 1rem;
+        }
+        &:hover {
+          background-color: rgb(241, 215, 165);
+        }
+      }
+    }
+  }
+  section.picture {
+    flex: 1 1 400px;
+    position: relative;
+    margin: 4rem;
+    img {
+      width: 28vw;
+    }
+    div.orangeRect {
+      width: 28vw;
+      height: 35vw;
+      background-color: orange;
+      position: absolute;
+      top: 75px;
+      left: 70px;
+      z-index: -1;
+    }
+  }
+  section.form {
+    flex: 1 1 600px;
+    form {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 1.5rem;
+      div {
+        margin: 0.5rem;
+        label {
+          font-size: 1.5rem;
+          margin-right: 1rem;
+        }
+        input,
+        textarea {
+          margin-right: 1rem;
+          background-color: rgb(255, 226, 172);
+          color: white;
+          font-size: 1.25rem;
+          padding: 0.5rem 1rem;
+          border: none;
+          width: 90%;
+        }
+        textarea {
+          /*把文字移到上面*/
+          vertical-align: top;
+        }
+      }
+      button {
+        align-self: center;
+        width: 10rem;
+        background-color: #e68210;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 0.75rem 1.5rem;
+        font-size: 2rem;
+        border-radius: 10px;
+      }
+    }
+  }
+  div.line {
+    background-color: gray;
+    width: 3px;
+  }
+  section.contact {
+    flex: 1 1 500px;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    div.content {
+      h2 {
+        margin: 1rem 0rem;
+      }
+    }
+  }
+}
+
+footer {
+  div {
+    padding: 2rem 2rem 0rem 3rem;
+    h2 {
+      font-size: 1.2rem;
+      color: rgb(99, 96, 96);
+    }
+  }
+}
+.active {
+  color: #f9ac53;
+}
+/*畫面縮小後會變形所以需要做一些更改*/
+@media screen and(max-width:1100px) {
+  .orange {
+    opacity: 0.5;
+    height: 95vh;
+  }
+  header {
+    nav {
+      ul {
+        width: 100%;
+        flex-direction: column;
+        li {
+          padding: 1rem 0rem;
+          border-bottom: 2px solid gray;
+        }
+      }
+    }
+  }
+  main {
+    section.right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem;
+      img {
+        /*改成靜態的*/
+        position: static;
+        transform: none;
+        width: 50vw;
+        height: 50vw;
+      }
+    }
+    section.picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 60vw;
+      }
+
+      div.orangeRect {
+        /*橘色消失*/
+        display: none;
+      }
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

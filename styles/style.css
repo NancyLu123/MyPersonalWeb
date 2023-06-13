@@ -1,0 +1,306 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+.orange {
+  position: absolute;
+  top: -10vh;
+  right: 0;
+  z-index: -1;
+  width: 55vw;
+  height: 150vh;
+}
+
+header nav {
+  width: 100%;
+}
+
+header nav ul {
+  padding: 2rem;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+header nav ul li {
+  font-size: 1.75rem;
+  margin: 0rem 3rem 0rem 0.5rem;
+}
+
+header nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+main {
+  /*使並排*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*在使用flexbox 效果時我們可以發現如果子元素數量較多時，內容常會被壓縮且擠在同一行，這時我們就可以透過 flex-wrap 來換行*/
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main section.left {
+  /*倍數放大,縮小,寬度最小值*/
+  padding: 2rem;
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 500px;
+          flex: 3 1 500px;
+}
+
+main section.left h1 {
+  font-size: 4rem;
+  color: #f9ac53;
+}
+
+main section.left p {
+  font-size: 1.5rem;
+  padding: 1rem 0rem;
+}
+
+main section.right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 600px;
+          flex: 1 1 600px;
+  position: relative;
+}
+
+main section.right img {
+  border-radius: 50%;
+  width: 20vw;
+  height: 20vw;
+  position: absolute;
+  top: 55vh;
+  right: 25vw;
+  /*使用 absolute + translate 達到CSS垂直置中的效果*/
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+main section.table {
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 400px;
+          flex: 3 1 400px;
+  padding: 1rem 1rem 1rem 2.5rem;
+}
+
+main section.table table {
+  /*將表格欄位邊框合併，*/
+  border-collapse: collapse;
+}
+
+main section.table table tr {
+  border-bottom: 2px solid gray;
+  /*轉場動畫*/
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+main section.table table tr td {
+  padding: 1rem;
+}
+
+main section.table table tr:hover {
+  background-color: #f1d7a5;
+}
+
+main section.picture {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 400px;
+          flex: 1 1 400px;
+  position: relative;
+  margin: 4rem;
+}
+
+main section.picture img {
+  width: 28vw;
+}
+
+main section.picture div.orangeRect {
+  width: 28vw;
+  height: 35vw;
+  background-color: orange;
+  position: absolute;
+  top: 75px;
+  left: 70px;
+  z-index: -1;
+}
+
+main section.form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 600px;
+          flex: 1 1 600px;
+}
+
+main section.form form {
+  min-height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1.5rem;
+}
+
+main section.form form div {
+  margin: 0.5rem;
+}
+
+main section.form form div label {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+main section.form form div input,
+main section.form form div textarea {
+  margin-right: 1rem;
+  background-color: #ffe2ac;
+  color: white;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  width: 90%;
+}
+
+main section.form form div textarea {
+  /*把文字移到上面*/
+  vertical-align: top;
+}
+
+main section.form form button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 10rem;
+  background-color: #e68210;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  font-size: 2rem;
+  border-radius: 10px;
+}
+
+main div.line {
+  background-color: gray;
+  width: 3px;
+}
+
+main section.contact {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 500px;
+          flex: 1 1 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+}
+
+main section.contact div.content h2 {
+  margin: 1rem 0rem;
+}
+
+footer div {
+  padding: 2rem 2rem 0rem 3rem;
+}
+
+footer div h2 {
+  font-size: 1.2rem;
+  color: #636060;
+}
+
+.active {
+  color: #f9ac53;
+}
+
+/*畫面縮小後會變形所以需要做一些更改*/
+@media screen and (max-width: 1100px) {
+  .orange {
+    opacity: 0.5;
+    height: 95vh;
+  }
+  header nav ul {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header nav ul li {
+    padding: 1rem 0rem;
+    border-bottom: 2px solid gray;
+  }
+  main section.right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 1rem;
+  }
+  main section.right img {
+    /*改成靜態的*/
+    position: static;
+    -webkit-transform: none;
+            transform: none;
+    width: 50vw;
+    height: 50vw;
+  }
+  main section.picture {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main section.picture img {
+    width: 60vw;
+  }
+  main section.picture div.orangeRect {
+    /*橘色消失*/
+    display: none;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/*# sourceMappingURL=style.css.map */
