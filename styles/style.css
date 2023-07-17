@@ -26,7 +26,7 @@ header nav {
 
 header nav ul {
   padding: 2rem;
-  width: 70%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,6 +44,10 @@ header nav ul li {
 header nav ul li a {
   color: black;
   text-decoration: none;
+}
+
+header nav ul li a:hover {
+  border-bottom: 3px solid #ea6804;
 }
 
 main {
@@ -112,12 +116,89 @@ main section.table table tr {
   transition: all 0.2s ease;
 }
 
+main section.table table tr td.title {
+  width: 9vw;
+}
+
 main section.table table tr td {
   padding: 1rem;
 }
 
+main section.table table tr td div.icon button {
+  background-color: #e3e2e0;
+  border: 1px solid #b5b3b3;
+}
+
 main section.table table tr:hover {
   background-color: #f1d7a5;
+}
+
+main section.project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/Pictures/橘子.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/Pictures/橘子.jpeg);
+}
+
+main section.project div.contact {
+  width: 78vw;
+  background-color: #ffe4cacc;
+  padding: 3rem 0 3rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main section.project div.contact div.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* 彈性方向：列（縱向） */
+}
+
+main section.project div.contact div.cards div.card {
+  width: 70vw;
+  min-height: 19rem;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  padding: 2.2rem 0 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main section.project div.contact div.cards div.card img {
+  width: 24rem;
+  height: 14rem;
+}
+
+main section.project div.contact div.cards div.card p.tex {
+  padding: 0rem 1.7rem 0rem 1rem;
+  width: 54%;
+  line-height: 27px;
+  margin-bottom: 2rem;
+}
+
+main section.project div.contact div.cards div.card p.tex a {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 main section.picture {
@@ -273,6 +354,21 @@ footer div h2 {
     width: 50vw;
     height: 50vw;
   }
+  main section.project div.contact {
+    width: 96%;
+  }
+  main section.project div.contact div.cards div.card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 89vw;
+  }
+  main section.project div.contact div.cards div.card p.tex {
+    margin-top: 1rem;
+    padding-left: 0rem;
+    width: 95%;
+  }
   main section.picture {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -301,6 +397,16 @@ footer div h2 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  main section.project div.contact div.cards div.card {
+    padding: 1rem 0 0 2rem;
+  }
+  main section.project div.contact div.cards div.card img {
+    width: 19rem;
+    height: 12rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
